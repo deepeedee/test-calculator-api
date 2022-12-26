@@ -5,17 +5,19 @@ import com.calculator.calculator.dto.Operation.OperationDTO;
 import com.calculator.calculator.exception.InvalidOperationException;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.platform.commons.util.StringUtils;
 
 import java.util.stream.Stream;
-
+@Slf4j
 @Getter
 @RequiredArgsConstructor
 public enum Operation {
 
     ADDITION("Addition"),
     SUBTRACTION("Subtraction"),
-    MULTIPLICATION("Multiplication");
+    MULTIPLICATION("Multiplication"),
+    DIVISION("Division");
 
     private final String value;
 

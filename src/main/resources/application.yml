@@ -3,14 +3,13 @@ spring:
         name: cerebro-data-collection-service
         version: '@project.version@'
     profiles:
-        active: dev
+        active: dev-laptop
     security:
         basic:
             enable: false
         user:
             name: admin
             password: password
-
 
     datasource:
         hikari:
@@ -27,3 +26,8 @@ spring:
             ddl-auto: create
             naming:
                 physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+server:
+    port: 8080
+    servlet:
+        context-path: /testapp

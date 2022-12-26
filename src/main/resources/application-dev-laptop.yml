@@ -1,0 +1,9 @@
+logging:
+  level:
+    ROOT: INFO
+    ph.com.globe.edo: DEBUG
+
+spring:
+  datasource:
+    username: root
+    password: root
