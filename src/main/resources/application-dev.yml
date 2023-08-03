@@ -1,4 +1,5 @@
-server:
-  port: 8080
-  servlet:
-    context-path: /testapp
+logging:
+  level:
+    ROOT: INFO
+    ph.com.globe.edo: DEBUG
+

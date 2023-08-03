@@ -13,6 +13,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CalculateLongDTO extends CalculateBaseDTO{
 
-    private List<Long> integers;
+    private List<Double> integers;
 
 }

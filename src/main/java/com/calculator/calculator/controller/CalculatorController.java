@@ -1,6 +1,7 @@
 package com.calculator.calculator.controller;
 
 import com.calculator.calculator.dto.Calculate.CalculateIntegerDTO;
+import com.calculator.calculator.dto.Calculate.CalculateLongDTO;
 import com.calculator.calculator.exception.BaseException;
 import com.calculator.calculator.service.CalculatorService.CalculatorService;
 import lombok.RequiredArgsConstructor;
@@ -25,11 +26,23 @@ public class CalculatorController {
     }
 
     @PostMapping(value = "/integer", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> calculate(@RequestBody CalculateIntegerDTO calculateIntegerDTO){
+    public ResponseEntity<String> calculateInt(@RequestBody CalculateIntegerDTO calculateIntegerDTO){
         log.info("Calculate:{}",calculateIntegerDTO);
         ResponseEntity<String> response;
         try {
             response = ResponseEntity.ok(calculatorService.calculateInteger(calculateIntegerDTO));
+        }catch (BaseException e){
+            response = ResponseEntity.status(e.getHttpStatus()).body(e.getMessage());
+        }
+        return response;
+    }
+
+    @PostMapping(value = "/double", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> calculateDouble(@RequestBody CalculateLongDTO calculateLongDTO){
+        log.info("Calculate:{}",calculateLongDTO);
+        ResponseEntity<String> response;
+        try {
+            response = ResponseEntity.ok(calculatorService.calculateDouble(calculateLongDTO));
         }catch (BaseException e){
             response = ResponseEntity.status(e.getHttpStatus()).body(e.getMessage());
         }
