@@ -3,7 +3,7 @@ spring:
         name: cerebro-data-collection-service
         version: '@project.version@'
     profiles:
-        active: dev-laptop
+        active: dev
     security:
         basic:
             enable: false
@@ -18,12 +18,12 @@ spring:
             maximum-pool-size: 1000
             idle-timeout: 10000
             max-lifetime: 1000
-        username: root
-        password: password
-        url: jdbc:mysql://localhost:3306/calculator_dev?zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&useSSL=false
+        username: sql12650247
+        password: wXQtvVqE8l
+        url: jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12650247?zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&useSSL=false
     jpa:
         hibernate:
-            ddl-auto: create
+            ddl-auto: update
             naming:
                 physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
